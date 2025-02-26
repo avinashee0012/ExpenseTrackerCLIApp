@@ -1,0 +1,8 @@
+# ignore vscode folder
+.vscode
+
+# ignore bin file as it's included in jar
+bin/
+
+# ignore todo.txt
+todo.txt
