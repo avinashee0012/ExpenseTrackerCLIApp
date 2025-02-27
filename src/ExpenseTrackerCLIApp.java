@@ -10,5 +10,6 @@ public class ExpenseTrackerCLIApp {
         Post obj = objectMapper.readValue( new File("src/test.json"), Post.class);
 
         System.out.println(obj);
+        System.out.println("If you see the Object above and this line, everything works fine!");
     }
 }
