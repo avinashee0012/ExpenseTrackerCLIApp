@@ -1,15 +1,21 @@
-import java.io.File;
-import com.fasterxml.jackson.databind.ObjectMapper;
 
 public class ExpenseTrackerCLIApp {
     public static void main(String[] args) throws Exception {
-        System.out.println("Hello World!");
+        ExpenseManager em = new ExpenseManager();
 
-        System.out.println("Testing jackson...");
-        ObjectMapper objectMapper = new ObjectMapper();
-        Post obj = objectMapper.readValue( new File("src/test.json"), Post.class);
+        // loading data from json to list
+        em.fetchFromJson();
 
-        System.out.println(obj);
-        System.out.println("If you see the Object above and this line, everything works fine!");
+        // 
+        em.addExpense("Travel", "Train", 100);
+        em.addExpense("Food", "Pizza", 700);
+        em.addExpense("Food", "Lunch", 80);
+
+        // list
+        em.listAllExpenses();
+
+
+        // storing to json for persistence of data
+        em.saveToJson();
     }
 }
