@@ -32,28 +32,31 @@ java -jar ExpenseTrackerCLIApp.jar add --amount 200 --category "Travel" --descri
 
 java -jar ExpenseTrackerCLIApp.jar list
 # ID  Date         Category Description  Amount
-# 1   2024-08-06   Food     Lunch        ₹80
-# 2   2024-09-02   Travel   Cab          ₹200
+# 1   2024-08-06   Food     Lunch        $80
+# 2   2024-09-02   Travel   Cab          $200
 
-java -jar ExpenseTrackerCLIApp.jar update --id 2 --description "Train" --amount 100
+java -jar ExpenseTrackerCLIApp.jar update --id 2 --description "Train" --amount 100 --category "Travel"
 # Expense updated successfully (ID: 2)
   
 java -jar ExpenseTrackerCLIApp.jar list
 # ID  Date         Category Description  Amount
-# 1   2024-08-06   Food     Lunch        ₹80
-# 2   2023-09-02   Travel   Train        ₹100
+# 1   2024-08-06   Food     Lunch        $80
+# 2   2023-09-02   Travel   Train        $100
 
 java -jar ExpenseTrackerCLIApp.jar summary
-# Total expenses: ₹180
+# Total expenses: $180
 
 java -jar ExpenseTrackerCLIApp.jar delete --id 1
 # Expense deleted successfully (ID: 1)
 
 java -jar ExpenseTrackerCLIApp.jar summary
-# Total expenses: ₹100
+# Total expenses: $100
 
 java -jar ExpenseTrackerCLIApp.jar summary --month 8
-# Total expenses for August: ₹0
+# Total expenses for August: $0
+
+java -jar ExpenseTrackerCLIApp.jar clear
+# Clears the entries
 ```
 
 ### Future Releases:
