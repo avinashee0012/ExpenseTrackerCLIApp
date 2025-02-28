@@ -24,35 +24,35 @@ java -jar ExpenseTrackerCLIApp.jar <command>
 
 ### Usage Example
 ```bash
-$ java -jar ExpenseTrackerCLIApp.jar add --description "Lunch" --amount 80 --category "Food"
+java -jar ExpenseTrackerCLIApp.jar add --description "Lunch" --amount 80 --category "Food"
 # Expense added successfully (ID: 1)
 
-$ java -jar ExpenseTrackerCLIApp.jar add --amount 200 --category "Travel" --description "Cab"
+java -jar ExpenseTrackerCLIApp.jar add --amount 200 --category "Travel" --description "Cab"
 # Expense added successfully (ID: 2)
 
-$ java -jar ExpenseTrackerCLIApp.jar list
+java -jar ExpenseTrackerCLIApp.jar list
 # ID  Date         Category Description  Amount
 # 1   2024-08-06   Food     Lunch        ₹80
 # 2   2024-09-02   Travel   Cab          ₹200
 
-$ java -jar ExpenseTrackerCLIApp.jar update --id 2 --description "Train" --amount 100
+java -jar ExpenseTrackerCLIApp.jar update --id 2 --description "Train" --amount 100
 # Expense updated successfully (ID: 2)
   
-$ java -jar ExpenseTrackerCLIApp.jar list
+java -jar ExpenseTrackerCLIApp.jar list
 # ID  Date         Category Description  Amount
 # 1   2024-08-06   Food     Lunch        ₹80
 # 2   2023-09-02   Travel   Train        ₹100
 
-$ java -jar ExpenseTrackerCLIApp.jar summary
+java -jar ExpenseTrackerCLIApp.jar summary
 # Total expenses: ₹180
 
-$ java -jar ExpenseTrackerCLIApp.jar delete --id 1
+java -jar ExpenseTrackerCLIApp.jar delete --id 1
 # Expense deleted successfully (ID: 1)
 
-$ java -jar ExpenseTrackerCLIApp.jar summary
+java -jar ExpenseTrackerCLIApp.jar summary
 # Total expenses: ₹100
 
-$ java -jar ExpenseTrackerCLIApp.jar summary --month 8
+java -jar ExpenseTrackerCLIApp.jar summary --month 8
 # Total expenses for August: ₹0
 ```
 
