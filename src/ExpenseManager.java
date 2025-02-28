@@ -27,13 +27,14 @@ public class ExpenseManager {
         this.mapper = new ObjectMapper();
         mapper.registerModule(new JavaTimeModule());
         this.fetchFromJson();
-        this.lastId = this.list.size();
+        this.lastId = list.size() == 0 ? 0 : this.list.get(list.size()-1).getId();
     }
 
     // METHODS
     void addExpense(String category, String description, int amount){
         Expense expense = new Expense(++lastId, category, description, amount);
         list.add(expense);
+        System.out.printf("Expense added successfully (ID: %d)\n", expense.getId());
     }
 
     void listAllExpenses(){
@@ -93,14 +94,15 @@ public class ExpenseManager {
     }
 
     void updateById(int id, String category, String description, int amount){
-        Expense expense = list.get(this.findIndex(id));
-        if (expense != null) {
+        int index = this.findIndex(id);
+        if (index != -1) {
+            Expense expense = list.get(index);
             expense.setCategory(category);
             expense.setDescription(description);
             expense.setAmount(amount);
             System.out.println("Expense updated successfully (ID: " + id + ")");
         } else {
-            System.out.println("Unable to find entry for id= " + id);
+            System.out.println("Unable to find entry for id=" + id);
         }
     }
 
@@ -110,7 +112,7 @@ public class ExpenseManager {
             list.remove(index);
             System.out.println("Expense deleted successfully (ID: " + id + ")");
         } else {
-            System.out.println("Unable to find entry for id= " + id);
+            System.out.println("Unable to find entry for id=" + id);
         }
     }
 
