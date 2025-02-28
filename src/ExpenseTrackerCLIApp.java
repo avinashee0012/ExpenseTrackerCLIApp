@@ -20,9 +20,9 @@ public class ExpenseTrackerCLIApp {
 
         // em.updateById(3, "Food", "Lunch", 80);
 
-        em.deleteById(1);
+        // em.deleteById(1);
 
-        em.listAllExpenses();
+        // em.listAllExpenses();
 
         em.saveToJson();
     }

@@ -20,7 +20,7 @@ public class ExpenseManager {
     // CONSTRUCTOR
     public ExpenseManager() throws IOException {
         this.list = new ArrayList<>();
-        this.jsonFile = new File("./expense.json");
+        this.jsonFile = new File("resources/expense.json");
         if(jsonFile.createNewFile()) {
             this.resetApplication();
         }
@@ -48,13 +48,13 @@ public class ExpenseManager {
         String jsonString = mapper.writeValueAsString(list);
         
         // create FileWriter and write jsonString to file
-        FileWriter writer = new FileWriter("./expense.json");
+        FileWriter writer = new FileWriter("resources/expense.json");
         writer.write(jsonString);
         writer.close();
     }
 
     void fetchFromJson() throws IOException {
-        FileReader reader = new FileReader("./expense.json");
+        FileReader reader = new FileReader("resources/expense.json");
 
         // Fetching list of objects from json
         List<Expense> objectsFromJson = mapper.readValue(reader, mapper.getTypeFactory().constructCollectionType(List.class, Expense.class));
@@ -119,7 +119,7 @@ public class ExpenseManager {
     }
 
     void resetApplication() throws IOException{
-        FileWriter writer = new FileWriter("./expense.json");
+        FileWriter writer = new FileWriter("resources/expense.json");
         writer.write("[]");
         writer.close();
         list.clear();
