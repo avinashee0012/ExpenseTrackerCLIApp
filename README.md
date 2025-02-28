@@ -9,7 +9,7 @@ Project does not use a dependency management tool and is done manually. JAR file
 2. Git - for versioning
 3. GitHub - as remote repository for codebase
 4. JSON - for persistence of data
-5. [jackson-databind](https://github.com/FasterXML/jackson-databind) library - for json-to-object mapping & vice-versa
+5. jackson-databind library ([link](https://github.com/FasterXML/jackson-databind)) - for json-to-object mapping & vice-versa
 
 ### Installation
 
@@ -17,5 +17,5 @@ Project does not use a dependency management tool and is done manually. JAR file
 ### Usage Example
 
 _____
-####
+###
 Project Idea: [roadmap.sh](https://roadmap.sh/projects/expense-tracker) 

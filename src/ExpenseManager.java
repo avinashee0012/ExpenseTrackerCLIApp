@@ -17,20 +17,16 @@ public class ExpenseManager {
     ObjectMapper mapper;
 
     // CONSTRUCTOR
-    public ExpenseManager() {
+    public ExpenseManager() throws IOException {
         this.list = new ArrayList<>();
         this.jsonFile = new File("resources/expense.json");
-        try {
-            jsonFile.createNewFile();
-            FileWriter writer = new FileWriter("resources/expense.json");
-            writer.write("[]");
-            writer.close();
-        } catch (IOException e) {
-            e.getMessage();
+        if(jsonFile.createNewFile()) {
+            this.resetApplication();
         }
-
         this.mapper = new ObjectMapper();
         mapper.registerModule(new JavaTimeModule());
+        this.fetchFromJson();
+        this.lastId = this.list.size();
     }
 
     // METHODS
@@ -67,6 +63,33 @@ public class ExpenseManager {
     }
 
     void summaryOfAllExpenses(){
+        int sum = 0;
+        for (Expense expense : list) {
+            sum += expense.getAmount();
+        }
+        System.out.println("Total expenses: $" + sum);
+    }
 
+    void summaryByMonth(){
+        
+    }
+
+    void updateById(){
+        
+    }
+
+    void deleteById(){
+        
+    }
+
+    void exportAsCSV(){
+        
+    }
+
+    void resetApplication() throws IOException{
+        FileWriter writer = new FileWriter("resources/expense.json");
+        writer.write("[]");
+        writer.close();
+        list.clear();
     }
 }
