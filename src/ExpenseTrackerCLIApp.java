@@ -9,14 +9,20 @@ public class ExpenseTrackerCLIApp {
         
 
         // em.resetApplication();
-        em.addExpense("Travel", "Train", 100);
+        // em.addExpense("Travel", "Train", 100);
         // em.addExpense("Food", "Pizza", 700);
         // em.addExpense("Grocery", "Rice", 200);
         em.listAllExpenses();
 
-        em.summaryOfAllExpenses();
+        // em.summaryOfAllExpenses();
 
-        em.summaryByMonth(2);
+        // em.summaryByMonth(3);
+
+        // em.updateById(3, "Food", "Lunch", 80);
+
+        em.deleteById(1);
+
+        em.listAllExpenses();
 
         em.saveToJson();
     }
