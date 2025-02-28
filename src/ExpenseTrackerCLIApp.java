@@ -59,7 +59,7 @@ public class ExpenseTrackerCLIApp {
                 em.updateById(id, category, description, amount);
                 break;
             case "delete":
-                if (args[1].equals("--id")) {
+                if (args[1].equals(em)) {
                     em.deleteById(Integer.parseInt(args[2]));
                 }
                 break;

@@ -116,10 +116,6 @@ public class ExpenseManager {
         }
     }
 
-    void exportAsCSV(){
-        
-    }
-
     void resetApplication() throws IOException{
         FileWriter writer = new FileWriter("resources/expense.json");
         writer.write("[]");

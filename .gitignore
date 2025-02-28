@@ -1,0 +1,6 @@
+# ignore directories as it's included in jar
+.vscode
+bin/
+
+# ignore files
+todo.txt
