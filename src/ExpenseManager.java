@@ -2,6 +2,8 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.time.LocalDate;
+import java.time.Month;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -70,8 +72,16 @@ public class ExpenseManager {
         System.out.println("Total expenses: $" + sum);
     }
 
-    void summaryByMonth(){
-        
+    void summaryByMonth(int month){
+        int sum = 0;
+        String monthName = Month.of(month).toString().substring(0,1).toUpperCase() + Month.of(month).toString().substring(1).toLowerCase();
+
+        for (Expense expense : list) {
+            if(expense.getDate().getMonthValue() == month){
+                sum += expense.getAmount();
+            }
+        }
+        System.out.println("Total expenses for " + monthName + ": $" + sum);
     }
 
     void updateById(){
